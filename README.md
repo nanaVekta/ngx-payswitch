@@ -57,8 +57,7 @@ Add the `ngx-theteller` component to your page
 | return_url | string | true | URL to redirect to when transaction is completed |
 | button_text | string | false | Text to show on payment button. Defaults to Pay Now | 
 | description | string | true | Text to be displayed as a short transaction narration |
-| payment_method | string | true | Choose between card or mobile money payment.
-e.g card, momo, both. Defaults to both |
+| payment_method | string | true | Choose between card or mobile money payment. e.g card, momo, both. Defaults to both |
 | custom_class | string | false | A custom class to style payment button |
 
 ## Contributing

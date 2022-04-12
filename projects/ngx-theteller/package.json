@@ -1,11 +1,29 @@
 {
   "name": "ngx-theteller",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^13.3.0",
     "@angular/core": "^13.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanaVekta/ngx-payswitch.git"
+  },
+  "keywords": [
+    "angular",
+    "theteller",
+    "momo",
+    "momo-integration",
+    "payment-integration",
+    "payswitch"
+  ],
+  "author": "Julius Asante (https://juliusasante.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanaVekta/ngx-payswitch/issues"
+  },
+  "homepage": "https://github.com/nanaVekta/ngx-payswitch#readme"
 }
