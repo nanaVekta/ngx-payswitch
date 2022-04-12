@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-theteller',
+  selector: 'ngx-theteller',
   template: `
     <form>
         <a class="ttlr_inline"
@@ -11,6 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
             [attr.data-customer_email]="customer_email"
             [attr.data-currency]="(currency) ? currency : 'GHS'"
             [attr.data-redirect_url]="return_url"
+            [attr.data-custom_class]="(custom_class) ? custom_class : ''"
             [attr.data-pay_button_text]="(button_text) ? button_text : 'Pay Now'"
             [attr.data-custom_description]="(description) ? description : ''"
             [attr.data-payment_method]="(payment_method) ? payment_method : 'both'">
@@ -31,6 +32,7 @@ export class NgxThetellerComponent implements OnInit {
   @Input() button_text!: string;
   @Input() description!: string;
   @Input() payment_method!: string;
+  @Input() custom_class!: string;
 
   constructor() { }
 

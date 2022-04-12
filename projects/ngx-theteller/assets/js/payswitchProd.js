@@ -67,7 +67,7 @@ function l(){
     delete a.onvalidateotpinit;
     delete a.meta;
     a.init_url=encodeURIComponent(g.location.href);
-    b.src="https://prod.theteller.net/checkout/api/checkout/inline/?"+q(a);
+    b.src="https://checkout-old.theteller.net/api/checkout/inline/?"+q(a);
     document.body.appendChild(b);
     b.onload=function(){}
   }
@@ -139,18 +139,19 @@ function l(){
         var k=v[p];
         if(k){
           var m={};
-          m=z(k,"APIKey transid amount customer_email customer_phone customer_lastname customer_firstname currency country customer_fullname callback onclose onvalidateotpinit onpaymentinit redirect_url pay_button_text custom_title custom_description custom_logo default_account payment_method exclude_banks settlement_token recurring_stop integrity_hash redirect_post redirect_no_json payment_page payment_plan campaign_id".split(" "));
+          m=z(k,"APIKey transid amount customer_email customer_phone customer_lastname customer_firstname currency country customer_fullname callback onclose onvalidateotpinit onpaymentinit redirect_url pay_button_text custom_title custom_description custom_logo default_account payment_method exclude_banks settlement_token recurring_stop integrity_hash redirect_post redirect_no_json payment_page payment_plan campaign_id custom_class".split(" "));
           m.meta=A(k)
         }
       }
       var e=document.createElement("button");
       e.innerText=m.pay_button_text||"Pay With Theteller";
       k.innerText="";
-      // e.setAttribute("style","color:#fff;background-color:#0a2740;border-color:#142a3e;/*padding:10px;*/display:inline-block;padding:6px12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1pxsolidtransparent;border-radius:4px;");
+      if(m.custom_class) {
+        e.classList.add(m.custom_class)
+      } else {
+        e.setAttribute("style","color:#fff;background-color:#0a2740;border-color:#142a3e;/*padding:10px;*/display:inline-block;padding:6px12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1pxsolidtransparent;border-radius:4px;");
+      }
       e.setAttribute("type","button");
-      e.classList.add('btn');
-      e.classList.add('btn-primary');
-      e.classList.add('btn-block');
       e.addEventListener("click",function(a){
         a=m;
         ""===a.APIKey||void 0===a.APIKey||null===a.APIKey?e.innerText="API Key is required":""===a.transid||void 0===a.transid||null===a.transid||12!==a.transid.length?e.innerText="Invalid Transaction ID":""===a.amount||void 0===a.amount||null===a.amount?e.innerText="Amount is required":""===a.payment_method||void 0===a.payment_method||null===a.payment_method?e.innerText="Set Payment Method":g.getpaidSetup(a)
@@ -160,7 +161,7 @@ function l(){
   })
 
 
-  g.getpaidSetup= function(a){Date.now();if(a.hosted_payment&&!a.is_hosted_page){var b=document.createElement("form");b.setAttribute("method","POST");b.setAttribute("action","https://prod.theteller.net/checkout/api/checkout/initiate");for(var d in a)if("meta"==d)a[d].forEach(function(a,c){var e=document.createElement("input");e.setAttribute("type","hidden");e.setAttribute("name",d+"["+c+"][metaname]");e.setAttribute("value",a.metaname);b.appendChild(e);e=document.createElement("input");e.setAttribute("type","hidden");
+  g.getpaidSetup= function(a){Date.now();if(a.hosted_payment&&!a.is_hosted_page){var b=document.createElement("form");b.setAttribute("method","POST");b.setAttribute("action","https://checkout-old.theteller.net/api/checkout/initiate");for(var d in a)if("meta"==d)a[d].forEach(function(a,c){var e=document.createElement("input");e.setAttribute("type","hidden");e.setAttribute("name",d+"["+c+"][metaname]");e.setAttribute("value",a.metaname);b.appendChild(e);e=document.createElement("input");e.setAttribute("type","hidden");
       e.setAttribute("name",d+"["+c+"][metavalue]");e.setAttribute("value",a.metavalue);b.appendChild(e)});else if(~["string","number","boolean"].indexOf(typeof a[d])){var c=document.createElement("input");c.setAttribute("type","hidden");c.setAttribute("name",d);c.setAttribute("value",a[d]);b.appendChild(c)}document.body.appendChild(b);b.submit()}else return n=a.is_hosted_page,delete a.is_hosted_page,r=a.meta,t=a.subaccounts,"customer_email"===a.customer_email&&(a.customer_email=document.getElementById("customer_email").value),
       y(a),{close:l}}
 })(window);

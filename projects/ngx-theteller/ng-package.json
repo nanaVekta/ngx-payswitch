@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-theteller",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["./assets"]
 }

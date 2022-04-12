@@ -60,11 +60,14 @@
             "assets": [
               "projects/testing/src/favicon.ico",
               "projects/testing/src/assets"
+
             ],
             "styles": [
               "projects/testing/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/ngx-theteller/assets/js/payswitchProd.js"
+            ]
           },
           "configurations": {
             "production": {

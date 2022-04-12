@@ -183,7 +183,7 @@
       }
   }
 
-  function validateData(x) {
+  function validateData(x, paybutton) {
 
       if (x.APIKey === '' || x.APIKey === undefined || x.APIKey === null) {
           paybutton.innerText = 'API Key is required';
@@ -265,17 +265,17 @@
         paybutton.innerText = iframeData.pay_button_text || "Pay With Theteller";
         ahref.innerText = "";
 
-        // paybutton.setAttribute('style', 'color:#fff;background-color:#0a2740;border-color:#142a3e;/*padding:10px;*/display:inline-block;padding:6px12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1pxsolidtransparent;border-radius:4px;');
+        paybutton.setAttribute('style', 'color:#fff;background-color:#0a2740;border-color:#142a3e;/*padding:10px;*/display:inline-block;padding:6px12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1pxsolidtransparent;border-radius:4px;');
 
         paybutton.setAttribute('type', 'button');
 
-        paybutton.classList.add('btn');
-        paybutton.classList.add('btn-primary');
-        paybutton.classList.add('btn-block');
+        // paybutton.classList.add('btn');
+        // paybutton.classList.add('btn-primary');
+        // paybutton.classList.add('btn-block');
 
         paybutton.addEventListener('click', function (e) {
 
-            validateData(iframeData);
+            validateData(iframeData, paybutton);
 
         });
         ahref.appendChild(paybutton);
