@@ -50,25 +50,16 @@ Add the `ngx-theteller` component to your page
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | apikey | string | true | Your merchant API key provided when you create an account with [theTeller](https://theteller.net/) |
-| --- | --- | --- | --- |
 | transaction_id | string | true | A 12-digit unique transaction reference provided by you |
-| --- | --- | --- | --- |
 | amount | number | true | Amount to charge |
-| --- | --- | --- | --- |
 | customer_email | string | true | Customer's Email |
-| --- | --- | --- | --- |
 | currency | string | true | Currency to charge customer in. Defaults to GHS |
-| --- | --- | --- | --- |
 | return_url | string | true | URL to redirect to when transaction is completed |
-| --- | --- | --- | --- |
 | button_text | string | false | Text to show on payment button. Defaults to Pay Now | 
-| --- | --- | --- | --- |
 | description | string | true | Text to be displayed as a short transaction narration |
-| --- | --- | --- | --- |
 | payment_method | string | true | Choose between card or mobile money payment.
 e.g card, momo, both. Defaults to both |
-| --- | --- | --- | --- |
-| custom_class | string | --- | false | A custom class to style payment button |
+| custom_class | string | false | A custom class to style payment button |
 
 ## Contributing
 
@@ -84,6 +75,3 @@ Two projects exist in this repository
 - Run `ng serve`
 
 ### Thanks to [Julius Asante](https://juliusasante.com)
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
